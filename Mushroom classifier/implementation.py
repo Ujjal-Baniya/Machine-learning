@@ -9,10 +9,12 @@ from sklearn.preprocessing import LabelEncoder
 encoder_y = LabelEncoder()
 Y = encoder_y.fit_transform(Y)
 
-for col in X.columns:
-    if X[col].nunique()==1:
-        print(col)
-        X.drop(col,axis=1,inplace=True)
+# =============================================================================
+# for col in X.columns:
+#     if X[col].nunique()==1:
+#         print(col)
+# =============================================================================
+X.drop("stalk-root",axis=1,inplace=True)
     
 encoder_x = LabelEncoder()
 for col in X.columns:
